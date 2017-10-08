@@ -1,2 +1,3 @@
-Tutaj jest nic ale kiedyś cos będzie
+﻿Tutaj jest nic ale kiedyś cos będzie
 Albo i nie 
+Próba edytu
