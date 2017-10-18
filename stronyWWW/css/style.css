@@ -1,3 +1,36 @@
 body{
- background-color;lightgrey;
+    font-family: arial, tahoma, araial_black, serif;
+    font-size: 12pt;
+    line-height: 1.5em;
+    background-color: black;
+    color: white;
+    
+}
+ 
+ h1 {
+    font-size: 250%;
+ }
+h1, h2 {text-align: center;} 
+ h2 {
+   center
+ }
+ .pochylony{
+   font-style: italic;
+ }
+ 
+ .pogrubiony {
+    font-weight: bold;
+ }
+
+.li {
+   font: italic bold, 16px/24px
+}
+.tekst1{
+   color: #0033ff;
+}
+.tekst2{
+   color: #F96B00;
+}
+.klasa{
+   font-family: "comic sans sm";
 }
