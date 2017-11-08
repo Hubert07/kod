@@ -6,6 +6,31 @@ body{
     color: white;
     
 }
+
+img{
+    border: 5px solid orange;}
+.header img{border: 8px solid yellow; }    
+
+#header img{border-color: green;}
+
+div#header{
+    border-color: red;
+}
+
+#header{
+    padding-top: 50px;
+    border-top: 40px dashed blue;
+}
+
+.header{
+    padding: 20px;
+    border: 10px solid black;
+    margin: 15px;
+}
+ 
+ .menu{
+    font-family: comic_sans;
+ }
  
  h1 {
     font-size: 250%;
