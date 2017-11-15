@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="wDesign">
+	<title>Widoczność elementów</title>
+    <style type="text/css">
+      .hide1{display: none;}
+      .hide2{visibility: hidden;}
+      .hiden3{position: absolute; top: -1000px; left: -1000px; background-color: red;}
+    </style>
+
+</head>
+
+<body>
+	<div class="hiden3" id="akapit3">
+    <p>1)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+  <input type="button" value="Odkryj akapit" onclick="odkryj3()">
+  <p class="hide2" id="akapit2">2)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <button onclick="odkryj2();">Pokaż</button>
+  <button onclick="ukryj2();">Ukryj</button>
+
+  <p class="hide1" id="akapit1">3)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <input type="button" value="Odkryj display" onclick="odkryj3()">
+
+  <p>4)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <script type="text/javascript">
+    function odkryj2(){
+      obj = document.getElementById('akapit2');
+      obj.style.visibility='visible';
+    }
+    function ukryj2(){
+      obj = document.getElementById('akapit2')
+      obj.style.visibility='hidden';
+    }
+    function odkryj3() {
+      obj = document.getElementById('akapit3')
+      obj.style.top= 0;
+      obj.style.left= 0;
+      obj.style.position = 'relative'
+    }
+    function odkryj1(){
+      obj = document.getElementById('akapit1')
+      obj.style.display='block';
+    }
+  </script>
+
+
+</body>
+
+</html>
