@@ -9,6 +9,7 @@
       .hide1{display: none;}
       .hide2{visibility: hidden;}
       .hiden3{position: absolute; top: -1000px; left: -1000px; background-color: red;}
+      body{background-color: rgb(0, 50, 150); font-family: arial black; color: rgb(255, 255, 255)}
     </style>
 
 </head>
@@ -33,13 +34,14 @@
   <button onclick="odkryj2();">Pokaż</button>
   <button onclick="ukryj2();">Ukryj</button>
 
-  <p class="hide1" id="akapit1">3)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  <p class="hide1" id="akapitczeci">3)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <input type="button" value="Odkryj display" onclick="odkryj3()">
+  <input type="button" value="Odkryj ukryty" onclick="odkryjtrzeci()">
+  <input type="button" value="Ukryj odkryty" onclick="ukryjtrzeci()">
 
   <p>4)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -62,12 +64,15 @@
       obj.style.left= 0;
       obj.style.position = 'relative'
     }
-    function odkryj1(){
-      obj = document.getElementById('akapit1')
+    function odkryjtrzeci(){
+      obj = document.getElementById('akapitczeci')
       obj.style.display='block';
     }
+    function ukryjtrzeci(){
+      obj = document.getElementById('akapitczeci')
+      obj.style.display='none';
+    }
   </script>
-
 
 </body>
 
