@@ -26,14 +26,14 @@ function draw() {
      if (mouseIsPressed) {
        if (mouseButton === LEFT) {
 
-       strokeWeight(10);
+       strokeWeight(100);
        fill(r, g, b, 127);
-       stroke(r, g, b,);
+       stroke(r, g, b);
      }
      if (mouseButton === CENTER) {
        strokeWeight(30);
-       fill(255, 255, 255,);
-       stroke(255, 255, 255,);
+       fill(255, 255, 255);
+       stroke(255, 255, 255);
      }
    } else {
      noFill();
