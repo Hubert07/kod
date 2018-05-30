@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS tbFilmy;
 CREATE TABLE tbFilmy (
   id INTEGER PRIMARY KEY,
-  tytol TEXT,
-  gatunek TEXT,
+  name TEXT NOT NULL,
+  genre TEXT DEFAULT '',
   year INTEGER,
-  ocena NUMERIC
+  rating DECIMAL
 );
