@@ -8,17 +8,18 @@ import random
 
 def main(args):
         liczba = random.randint(1, 10)
-        print('Los wybrał Ci:', liczba)
+        # print('Los wybrał Ci:', liczba)
+        for i in range(3):
+            odp = input('Podaj liczbę od 1 do 10:')
+            print('Wybrałeś liczbę:', odp)
 
-        odp = input('Podaj liczbę od 1 do 10:')
-        print('Wybrałeś liczbę:', odp)
+            if liczba == int(odp):
+                print('Umiesz w liczby')
+                break  # przerwanie działania pętli
+            else:
+                print('No chyba nie')
 
-        if liczba == int(odp):
-            print('Umiesz w liczby')
-        else:
-            print('No chyba nie')
-
-        return 0
+            return 0
 
 
 if __name__ == '__main__':

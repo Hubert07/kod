@@ -10,7 +10,7 @@ def dane_z_pliku(nazwa_pliku):
     with open(nazwa_pliku, 'r', newline='', encoding='utf-8') as plik:
         # tutaj dodaje się różne takie do określenia danych poczytaj o csv
         # (o separatorach w plikach txt)  https://gist.github.com/lo1cgsan
-        tresc = csv.reader(plik, delimiter='\t')
+        tresc = csv.reader(plik, delimiter='\t')  # /t separaor to tabulator
         print(tresc)
         for rekord in tresc:
             rekord = [x.strip()for x in rekord]
