@@ -11,13 +11,22 @@ def dane_z_pliku(nazwa_pliku):
         # tutaj dodaje się różne takie do określenia danych poczytaj o csv
         # (o separatorach w plikach txt)  https://gist.github.com/lo1cgsan
         tresc = csv.reader(plik, delimiter='\t')  # /t separaor to tabulator
-        print(tresc)
         for rekord in tresc:
             rekord = [x.strip()for x in rekord]
             # coś.nazwafunkcji wywołuje tę funkcję dla x
             # [x.strip()for x in rekord] usuwa puste miejsce
             dane.append(rekord)  # append = dodaj
     return dane
+
+
+def kwerenda_1(cur):
+    cur.execute("""
+        SELECT name AS nazwa,  genre AS gatunek FROM filmy;
+    """)
+
+    wynik = cur.fetchall()  # pobranie wsyzstkich rekordów na raz
+    for row in wynik:  # wczytanie kolejnych rekordów
+        print(tuple(row))  # drukownaie pól
 
 
 def main(args):
@@ -30,9 +39,9 @@ def main(args):
         cur.executescript(plik.read())
 
     # dodawanie danych do bazy
-    filmy = dane_z_pliku('filmy.txt')
-    filmy.pop(0)  # usuń 1 rekord z listy
-    cur.executemany('INSERT INTO filmy VALUES(?, ?, ?, ?, ?)', filmy)
+    tbFilmy = dane_z_pliku('filmy.txt')
+    tbFilmy.pop(0)  # usuń 1st rekord z listy
+    cur.executemany('INSERT INTO tbFilmy VALUES(?, ?, ?, ?, ?)', tbFilmy)
     # ? = zastępnik
     con.commit()  # zatwierdzeniezmian w bazie
     con.close()  # zamknięcie połączenia z bazą
