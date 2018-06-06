@@ -24,8 +24,8 @@ def kwerenda_1(cur):
         SELECT name AS nazwa,  genre AS gatunek FROM filmy;
     """)
 
-    wynik = cur.fetchall()  # pobranie wsyzstkich rekordów na raz
-    for row in wynik:  # wczytanie kolejnych rekordów
+    wyniki = cur.fetchall()  # pobranie wsyzstkich rekordów na raz
+    for row in wyniki:  # wczytanie kolejnych rekordów
         print(tuple(row))  # drukownaie pól
 
 
