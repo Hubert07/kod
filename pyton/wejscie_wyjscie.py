@@ -19,15 +19,20 @@
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
-#
+#  duck typing = you must be like duck
 #
 
 
 def main(args):
     # To na dole = temu co jest w cpp
-    a = input("podaj liczbę:")
-    b = input("podaj drugą liczbę:")
-    print(a+b)
+    a = int(input("podaj liczbę:"))
+    b = int(input("podaj drugą liczbę:"))
+
+    print("Suma: ", a + b)
+    print("Różnica: ", a - b)
+    print("Iloczyn: ", a * b)
+    print("Iloraz: ", a / b)
+
     return 0
 
 if __name__ == '__main__':

@@ -32,6 +32,18 @@ int suma(int a, int b){
     return a + b;
 }
 
+int roznica(int a, int b){
+    return a - b;
+}
+    
+int iloczyn(int a, int b){
+    return a * b;
+}
+
+int iloraz(int a, int b){
+    return a / b;
+}
+
 int main(int argc, char **argv)
 {
     int a, b;
@@ -42,9 +54,9 @@ int main(int argc, char **argv)
     cout << "podaj drugą liczbę:";
     cin >> b;
     cout << "\n" << "Suma: " << suma(a, b);
-    cout << "\n" << "Różnica: " << a-b;
-    cout << "\n" << "Iloczyn: " << a*b;
-    cout << "\n" << "Iloraz: " << a/b;
+    cout << "\n" << "Różnica: " << roznica(a, b);
+    cout << "\n" << "Iloczyn: " << iloczyn(a, b);
+    cout << "\n" << "Iloraz: " << iloraz(a, b);
 
 	return 0;
 }
