@@ -1,0 +1,10 @@
+====== sql ======
+Created piątek 14 września 2018
+
+sqlite3 coś.db < czegoś.sql = zrób plik.sb na podstaiwe pliku. sb
+la -al pokaz wszystkie pliki
+sqlite3 coś.db = otwórz plik 
+
+sqlite {
+	.tables = wyświetl tabele
+}
