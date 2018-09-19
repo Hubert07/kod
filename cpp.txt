@@ -1,2 +1,7 @@
+: zapowiada wcięcie
+można używać and/or do kilku warunków
 
+list(range(-5[odkąd], 20[dokąd], 3[co ile]))
 
+i pyhon:
+liczba parzysta jest traktowana jako TRUE a nieparxysta jako FALSE
