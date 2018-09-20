@@ -1,14 +1,16 @@
 .color-red-black {
   color: #f00;
-
 }
+
+a {color: #f00;}
+a:hover{color: #f00;}
 
 body{
   font-family: 'Slabo 27px', serif;
 }
 
 .table {
-  background-color: #e7e6e6;
+  background-color: #fcfcfc;
 }
 
 .tytol {
