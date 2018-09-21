@@ -8,3 +8,9 @@ sqlite3 coś.db = otwórz plik
 sqlite {
 	.tables = wyświetl tabele
 }
+
+jak się dane powatarszają to RAMu więcej zużywa
+
+Normalizacja to bezstratny proces organizowania danych w tabelach mający na celu zmniejszenie ilości danych składowanych w bazie oraz wyeliminowanie potencjalnych anomalii
+
+atomowośc danych = każde polo przechowuje 1 informację = unikalność
