@@ -1,0 +1,79 @@
+====== sql ======
+Created piątek 14 września 2018
+
+sqlite3 coś.db < czegoś.sql = zrób plik.sb na podstaiwe pliku. sb
+la -al pokaz wszystkie pliki
+sqlite3 coś.db = otwórz plik 
+
+sqlite {
+	.tables = wyświetl tabele
+}
+
+jak się dane powatarszają to RAMu więcej zużywa
+
+Normalizacja to bezstratny proces organizowania danych w tabelach mający na celu zmniejszenie ilości danych składowanych w bazie oraz wyeliminowanie potencjalnych anomalii
+
+atomowośc danych = każde polo przechowuje 1 informację = unikalność
+
+Ta postać określa esencję dobrego projektowania bazy. Mówi o tym, że każda tabela powinna przechowywać dane dotyczące tylko konkretnej klasy obiektów.
+
+Trzecia postać normalna głosi, że kolumna informacyjna nie należąca do klucza nie zależy też od innej kolumny informacyjnej, nie należącej do klucza. Czyli każdy niekluczowy argument jest bezpośrednio zależny tylko od klucza głównego a nie od innej kolumny. (czyli usuwanie danych które można jakoś wyliczyć)
+
+więzy ontegralności (constraints)
+Dzięki więzom integralności nie można tak zmodyfikować danych by straciły on spójność. Są zbiorem zasad nałożonych na tabele w bazie danych.
+Jest coś takiego jak klauzula DEFAULT czyli waartość domyślna (nw czy zawsze bd wartość, ale najczęściej bd wynosić x no to jako default można wpisać x)
+
+Unique
+Zapewnia unikalność wartości w kolumnie, jednak w przeciwieństwie do PRIMARY KEY takich kluczy może być więcej niż jeden, oraz umożliwia występowanie wartości NULL.
+
+NULL
+NOT NULL - niedopuszczanie pustych wartośći
+
+Foreign key
+Jest to klucz obcy. Służy do definiowania relacji pomiędzy tabelami. Zapewnia że rekord w tabeli podrzędnej zawsze będzie miał swojego odpowiednika w tabeli nadrzędnej. Klucz obcy musi się odwoływać do kolumny (kolumn) w tabeli nadrzędnej, na których założony jest UNIQUE lub klucz główny.
+
+pole REFERENCES tabele(inne_pole) to samo co FOREIGN
+
+ciąg pusty  ""
+
+Check
+Zapewnia że wartość wstawiana do kolumny spełnia wymagany warunek logiczny. Nie można w nim wykorzystywać odwołań do innych tabel, funkcji agregujących, SYSDATE.
+CHECK num1  >  num2 sprawdź czy num 1 > num 2  jeżeli tak jest, to dodaj wartość
+
+[[MySQL]]
+SQLite3 
+[[MariaDB]]
+[[MicrosoftSQL]]
+Oracle Database
+
+typy liczbowe
+INTEGER
+BIGINT
+SMALLINT
+TINYINT
+BIT
+
+REAL obejmuje {
+DECIMAL, NUMERIC, liczby zmiennoprzecinkowe, 
+MONEY - format walutowy, typ zmiennoprzecinkowy
+}
+
+CHARACTER(n) CHAR(n) n znaków 1 CHAT = 1 bajt
+
+VARCHAR(n) określone na sztywno  max znaków , ale jak wpiszesz < n to nie uzupełnia pustymi polami
+
+KODOWANIE
+UTF-8 (unicode)
+znaki łacińskie: qwerty
+żółćąśę/znaki chińskie to o Jezus
+
+BLOB 
+kiedy chcemy przechowywać obrazki ciąg bitów, format binarny
+bazy nie obchodzi jaki to ma format
+
+BOLEAN DATATYPE
+niektóre oddzielają Boleany w SQL jest to 0 lub 1
+
+TEXT
+ISO8601 ("YYYY-MM-DD HH:MM:SS.SSS) 
+Data jako liczba rzeczywista (data to nr dnia, który upłynął od południa 24 grudnia 4)
