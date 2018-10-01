@@ -1,5 +1,5 @@
 /*
- * 75.cpp
+ * petla4.cpp
  * 
  * Copyright 2018 Hubert <Hubert@DESKTOP-K3DV5KA>
  * 
@@ -28,19 +28,18 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    int a, b;
-    a = b = 0;
+	int i, b;
+    i = b = 0;
     
-    while (a <= 75)
+    for (i = 10; i <= 99; i++)
     {
-    cout << "Podaj liczbę: ";
-    cin >> a;
-    b = a + b;
-    cout << "wynik: " << b << endl;
+        if (i % 6 == true)
+        {
+            cout << i - 1 << endl;
+        }
+    
     }
     
-
-
 	return 0;
 }
 
