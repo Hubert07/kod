@@ -20,12 +20,16 @@ def suma_cyfr(l2):
 def main(args):
 
     assert(suma_cyfr(111) == 3)
+    assert(suma_cyfr(4568) == 23)
+    assert(suma_cyfr(9996) == 33)
+    assert(suma_cyfr(846) == 18)
 
     # l2 = int(input("Podaj liczbę: "))
     # while l2 < 10:
     #    l2 = int(input("Podaj liczbę: "))
 
     return 0
+
 
 if __name__ == '__main__':
     import sys
