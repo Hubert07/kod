@@ -6,8 +6,8 @@ def main(args):
     a = int(input("Podaj wysokość choinki: "))
     c = str(input("Podaj znak, którym ma być rysowana choinka: "))
 
-    for a in range(a, 1, a - 1):
-        print(a * c)
+    for x in range(0, a, 1):
+        print((a - x) * c)
 
     return 0
 

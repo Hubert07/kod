@@ -23,11 +23,11 @@
 
 def main(args):
 
-     a = int(10)
+    a = 10
 
-    for a in range(10, a = 99, 1):
-        if a % 6 == true:
-            print(a)
+    for a in range(10, 99, 1):
+        if a % 6 == 1:
+            print(a - 1)
 
     return 0
 
