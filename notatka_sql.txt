@@ -14,3 +14,13 @@ jak się dane powatarszają to RAMu więcej zużywa
 Normalizacja to bezstratny proces organizowania danych w tabelach mający na celu zmniejszenie ilości danych składowanych w bazie oraz wyeliminowanie potencjalnych anomalii
 
 atomowośc danych = każde polo przechowuje 1 informację = unikalność
+
+ZALEŻNOŚCI MIĘDZY TABELAMI
+
+SELECT * FROM tbOrders JOIN tbSubscription ON subscription_id = tbSubscription.id WHERE description='Fashion Magazine';
+
+SELECT customers_id, name * FROM tbOrders JOIN tbCustomers ON tbOrders.customers_id = tbCustomers.id;
+
+SELECT * FROM tbOrders JOIN tbCustomers ON tbOrdres.customers_id = tbCustomers.id;
+
+DISTINCT

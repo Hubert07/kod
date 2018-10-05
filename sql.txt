@@ -77,3 +77,6 @@ niektóre oddzielają Boleany w SQL jest to 0 lub 1
 TEXT
 ISO8601 ("YYYY-MM-DD HH:MM:SS.SSS) 
 Data jako liczba rzeczywista (data to nr dnia, który upłynął od południa 24 grudnia 4)
+
+
+CSV 
