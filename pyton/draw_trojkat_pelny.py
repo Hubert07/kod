@@ -8,17 +8,8 @@ def main(args):
 
     for x in range(1, a + 1, 1):
         b = x + (x - 1)
-        e = (2 * x) - 5
         d = a - x
-        if x > 1 and x < a:
-            print(d * " ", c, e * " ", c)
-        else:
-            print(d * " ", b * c)
-
-    # for x in range(1, a + 1, 1):
-    #     b = x + (x - 1)
-    #     d = a - x
-    #     print(d * " ", b * c)
+        print(d * " ", b * c)
 
     return 0
 
