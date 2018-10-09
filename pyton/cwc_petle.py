@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #  cwc_petle.py
-#  
+
 
 def main(args):
     a = 0
@@ -12,6 +12,7 @@ def main(args):
         b = a + b
         print("Wynik:", b)
     return 0
+
 
 if __name__ == '__main__':
     import sys

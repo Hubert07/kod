@@ -22,7 +22,7 @@
 #  pyformat.com dobra  strona
 
 
-def liczby(a, b):
+def main(args):
 
     a = int(input("Podaj zakres mnożenia: "))
     b = int(input(" Podaj 2 zakres mnożenia: "))
@@ -34,36 +34,6 @@ def liczby(a, b):
 
     return 0
 
-
-def liczby2(a, b):
-    """
-    Drukuje wszystki liczby dwucydrowe, którym nie powatarzają się cyfry
-    np.: 11, 22, 33 ...
-    """
-
-    for x in range(a, b + 1, 1):
-        for y in range()
-
-    return 0
-
-
-def liczby3(a, b):
-    """
-    Drukuje wszystkie liczby 3 cyfrowe, gdzie nie powtarzają się cyfry
-    Bez 111 112 11x, 66x itd
-    """
-
-    pass
-
-    return 0
-
-
-def main(args):
-
-    print(liczby2(a=10, b=99))
-    print(liczby3(a=100, b=999))
-
-    return 0
 
 if __name__ == '__main__':
     import sys
