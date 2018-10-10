@@ -24,19 +24,20 @@
 
 
 def nwd(a, b):
-    nwd = 0
-    if a == b:
-        nwd = a
-    else:
-        while
+
+    while a != b:
+        if a > b:
+            a = a - b
+        if a < b:
+            b = b - a
+
+    return a
 
 
 def main(args):
     a = int(input("Podaj pierwszą liczbę: "))
     b = int(input("Podaj drugą liczbę: "))
     print("Największy wspólny dzielnik {} i {} to {}" .format(a, b, nwd(a, b)))
-
-    pass
 
     return 0
 
