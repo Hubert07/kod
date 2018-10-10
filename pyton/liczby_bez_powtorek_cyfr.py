@@ -57,20 +57,27 @@ def liczby3(a, b):
 
     ilosc = 0
 
-    for x in range(a, b + 1, 1):
-        c = x % 111
-        d = x % 110
-        e = x % 101
-        g = x % 100
-        if c != 0 and d != 0 and e != 0 and g != 0:
-            z = 0
-            z = int(x / 10)
-            if z % 11 != 0:
+    for i in range(1, 10):
+        for j in range(0,10):
+            for k in range(0,10):
+               if i != j and i != k and j != k:
                 print(x)
-            ilosc = ilosc + 1
+                ilosc = ilosc + 1
     print("Ilośc takich liczb: ", ilosc)
 
     return "To była funkcja Liczby3"
+
+
+    # for x in range(a, b + 1, 1):
+    #     c = x % 111
+    #     d = x % 110
+    #     e = x % 101
+    #     g = x % 100
+    #     z = x % 10
+    #     f = (x - z) % 11
+    #     h = (x % 100)
+    #     if c != 0 and d != 0 and e != 0 and g != 0 and f != 0:
+    #         print(x)
 
 
 def main(args):
