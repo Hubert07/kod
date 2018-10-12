@@ -80,3 +80,6 @@ Data jako liczba rzeczywista (data to nr dnia, który upłynął od południa 24
 
 
 CSV 
+
+SELECT * FROM newspaper LEFT JOIN online ON newspaper.id=online.id; nawet jak to po prawej nie odpowiada temu po lewej, to i tak zapisze roekordy z lewej
+SELECT * FROM newspaper LEFT JOIN online ON newspaper.id=online.id WHERE online.id = NULL;
