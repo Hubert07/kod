@@ -35,7 +35,7 @@ int liczby3() {
 int main(int argc, char **argv) {
     
     int ile = liczby2();
-    cout << "\n\nLiczb dwucyfrowych: " << ile;
+    cout << "\n\nLiczb dwucyfrowych: " << ile << endl;
     int ile2 = liczby3();
     cout << "\n\nLiczb trzycyfrowych jest: " << ile2;
     
