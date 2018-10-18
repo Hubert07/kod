@@ -7,7 +7,7 @@
 def main(args):
     a = 0
     b = 0
-    while a <= 75:
+    while b <= 75:
         a = int(input("Pierwsza liczba: "))
         b = a + b
         print("Wynik:", b)
