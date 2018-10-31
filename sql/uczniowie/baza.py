@@ -23,7 +23,7 @@ def dane_z_pliku(nazwa_pliku, separator=','):
 
 def kwerenda_1(cur):
     cur.execute("""
-        SELECT * FROM magazyn
+        SELECT * FROM baza_nazwa
     """)
 
     """
@@ -31,7 +31,6 @@ def kwerenda_1(cur):
     SELECT name, downloads FROM fakeapps WHERE downloads > (SELECT AVG(downloads) FROM fakeapps) ORDER BY downloads DESC LIMIT 5;
     SELECT COUNT(name) FROM fakeapps WHERE downloads > (SELECT AVG(downloads) FROM fakeapps);
     SELECT category, SUM(downloads) AS suma_pobran FROM fakeapps GROUP BY category ORDER BY suma_pobran DESC;
-
 
     """
     wyniki = cur.fetchall()  # pobranie wszystkich rekordów na raz
@@ -53,19 +52,20 @@ def ile_kolumn(cur, tab):
 
 def main(args):
     baza_nazwa = 'uczniowie'
-    table = ['uczniowie', 'klasy', 'przedmioty', 'oceny']
+    tabele = ['uczniowie', 'klasy', 'przedmioty', 'oceny']
 
-    con = sqlite3.connect(baza_nazwa + ' .db')  # połączenie z bazą
+    con = sqlite3.connect(baza_nazwa + '.db')  # połączenie z bazą
     cur = con.cursor()  # utworzenie kursora
 
     # utworzenie tabeli w bazie
     with open(baza_nazwa + '.sql', 'r') as plik:
         cur.executescript(plik.read())
 
-    for tab in table:
+    for tab in tabele:
         ile = ile_kolumn(cur, tab)  # ile mamu pól w tabeli
         dane = dane_z_pliku(tab + '.csv')
         ile_d = len(dane[0])
+
         if ile > ile_d:  # primary key autoincrement
             dane2 = []  # tymczasowa lista na dane
             for r in dane:
@@ -73,8 +73,8 @@ def main(args):
                 dane.append(r)
             dane = dane2
             ile_d += 1
-        pholders = ' ,'.join(['?'] * ile_d)
-        cur.execute('INESRT INTO ' + tab + ' VALUES(' + pholders + ')', dane)
+            pholders = ','.join(['?'] * ile_d)
+    cur.execute('INESRT INTO ' + tab + ' VALUES(' + pholders + ')', dane)
 
     con.commit()  # zatwierdzenie zmian w bazie
     con.close()  # zamknięcie połączenia z bazą

@@ -4,7 +4,7 @@ CREATE TABLE uczniowie
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	imie TEXT,
 	nazwisko TEXT,
-	plec BOOLEAN,
+	plec INTEGER,
 	id_klasa INTEGER,
 	egz_hum INTEGER,
 	egz_mat INTEGER,
@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS klasy;
 CREATE TABLE klasy
 (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	klasa TEXT(2),
+	klasa TEXT (2),
 	rok_naboru INTEGER,
 	rok_matury INTEGER
 );
@@ -28,7 +28,7 @@ CREATE TABLE przedmioty
 	przedmiot TEXT,
 	imie_naucz TEXT,
 	nazwisko_naucz TEXT,
-	plec_naucz BOOLEAN
+	plec_naucz INTEGER
 );
 
 DROP TABLE IF EXISTS oceny;
@@ -38,7 +38,7 @@ CREATE TABLE oceny
 	datad DATE,
 	id_uczen INTEGER,
 	id_przedmiot INTEGER,
-	ocena INTEGER,
+	ocena DECIMAL,
 	FOREIGN KEY (id_uczen) REFERENCES uczniowie(id),
 	FOREIGN KEY (id_przedmiot) REFERENCES przedmioty(id)
 );
