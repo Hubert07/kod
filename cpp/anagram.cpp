@@ -6,6 +6,8 @@
 #include <iostream>
 
 using namespace std;
+ // anagram() funkcja odwraca znaki w danym wyrazie
+ //wyrazy funkcja odwraca znaki w wyrazach
 
 int zlicz(char tb[]) {
     int i = 0;
@@ -19,19 +21,22 @@ void wyswietl(char tekst[], int rozmiar) {
     }
 }
 
-void anagram(char tekst[], rozmiar) {
-    //for zaczyna od ostatmniego znaku
-    for (int i; i <= coś; i--) {
-        
-        }
+void anagram(char tekst[], int rozmiar) {
+// for zaczyna od ostatmniego znaku
+    for (int i = rozmiar; i >= 0; i--) {
+        cout << tekst[i];
     }
+}
 
 int main(int argc, char **argv)
 {
-    const int rozmiar = 50; // deklaracja stałej
+    const int rozmiar = 30; // deklaracja stałej
     char tekst[rozmiar];
+    cout << "Podaj słowa: ";
     cin.getline(tekst, rozmiar);
     wyswietl(tekst, zlicz(tekst));
+    cout << "\nSłowa zapisane od tyłu: ";
+    anagram(tekst, zlicz(tekst));
     
 	return 0;
 }

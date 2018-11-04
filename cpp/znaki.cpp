@@ -67,13 +67,13 @@ void zamiana_liter(char tab[]) {
 
 int main(int argc, char **argv)
 {
-    const int rozmiar = 20; // deklaracja stałej
+    const int rozmiar = 50; // deklaracja stałej
     char znaki[rozmiar];
     cout << "Jak się nazywasz?" << endl;
-    cin.getline(znaki, 20); // deklaracja tablicy znakowej
+    cin.getline(znaki, 50); // deklaracja tablicy znakowej
     cout << "Cześć " << znaki << endl;
 	// licz_znaki(znaki);
-    ascii(znaki);
+    cout << ascii(znaki) << endl;
     zamiana_liter(znaki);
 	return 0;
 }
