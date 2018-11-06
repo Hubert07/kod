@@ -28,13 +28,16 @@ void anagram(char tekst[], int rozmiar) {
     }
 }
 
+
+
 int main(int argc, char **argv)
 {
     const int rozmiar = 30; // deklaracja stałej
     char tekst[rozmiar];
     cout << "Podaj słowa: ";
     cin.getline(tekst, rozmiar);
-    wyswietl(tekst, zlicz(tekst));
+    wyswietl(tekst, cin.gcount());
+    // cin.gcount() zwraca ilość wprowadzonych znakow
     cout << "\nSłowa zapisane od tyłu: ";
     anagram(tekst, zlicz(tekst));
     
