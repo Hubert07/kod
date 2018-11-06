@@ -1,0 +1,61 @@
+*set*
+set(z jakiejś listy np.) robi *zbiór* z czegoś
+
+
+
+
+*listy*
+
+lsity są modyfikowalne a zmienne typu x = 1 nie są 
+lista.append
+lista.remove 
+            dodaje lub usuwa wartości
+lista.count(x) zlicza ile razy x występuje w liście
+x = [] <- lista
+x = {} <- zbior
+
+...set objects...
+
+zbior1 ^ zbior2 coś co nie wystęuje w 2 a jest w 1 i coś co jest w 2 i nie występuje w 1
+zbior1 - zbior2 cos co jest w zbior1 i nie ma wz 2
+zbior1 & zbior2 te, które są tu i tu
+
+
+
+*słownik*
+
+osoba = slownik
+
+slownik = {'imie': 'Hubert'}
+
+slownik = {'nazwisko': 'Gajewski'}
+
+slownik
+Out[56]: {'nazwisko': 'Gajewski'}
+
+slownik = {'imie': 'Hubert'}
+
+osoba['nazwisko'] = 'Gajewski'
+
+osoba['nazwisko'] = 'Gajewski'
+
+osoba
+Out[61]: {'imie': 'Hubert', 'nazwisko': 'Gajewski'}
+
+osoba['wiek'] = 17
+
+osoba
+Out[63]: {'imie': 'Hubert', 'nazwisko': 'Gajewski', 'wiek': 17}
+
+
+
+strultury danych na yt jest
+
+
+
+*kolejka*
+
+trzeba zaimportować z "collections" -> "deque"
+i potem kolejka = deque([])
+kolejka.append(x) / kolejka.popleft()
+
