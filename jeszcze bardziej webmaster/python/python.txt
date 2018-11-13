@@ -59,3 +59,5 @@ trzeba zaimportować z "collections" -> "deque"
 i potem kolejka = deque([])
 kolejka.append(x) / kolejka.popleft()
 
+tupla = lista, której nie da się dodać
+
