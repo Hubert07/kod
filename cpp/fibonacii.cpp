@@ -14,6 +14,7 @@ int fibonacci_it(int n) {
         b = wynik;
         cout << wynik << endl;
     }
+    cout << "Wynosi: ";
     return wynik;
 }
 
@@ -22,7 +23,7 @@ int main(int argc, char **argv) {
     cout << "Podaj numer liczby: ";
     cin >> numer;
     cout << "Ciąg Fibonacciego do wyrazu: " << numer <<":" << endl;
-    cout << "Ciąg Fibonacciego dla: " << numer;
+    cout << "Ciąg Fibonacciego dla: " << numer << endl;
     cout << fibonacci_it(numer) << endl;
     return 0;
 }
