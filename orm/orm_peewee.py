@@ -19,7 +19,8 @@ class BazaModel(Model):
 
 
 class Klasa(BazaModel):
-    nazwa = CharField(null=False)  # nie pozwalamy żeby nie było nazwy
+    nazwa = CharField(null=False)
+    # nie pozwalamy żeby nie było nazwy
     roknaboru = IntegerField(default=0)
     rokmatury = IntegerField(default=0)
 
@@ -31,8 +32,8 @@ class Uczen(BazaModel):
     imie = CharField(null=False)  # nie pozwalamy żeby nie było nazwy
     nazwisko = CharField(null=False)  # nie pozwalamy żeby nie było nazwy
     plec = BooleanField()
-    roknaboru = IntegerField(default=0)
-    rokmatury = IntegerField(default=0)
+    # roknaboru = IntegerField(default=0)
+    # rokmatury = IntegerField(default=0)
     klasa = ForeignKeyField(Klasa, related_name='uczniowie')
 
     # class Meta:
@@ -40,17 +41,36 @@ class Uczen(BazaModel):
 
 
 class Wynik(BazaModel):
-    egzaminhum = FloatField(default=o)  # nie pozwalamy żeby nie było nazwy
-    egzaminmat = FloatField(default=o)  # nie pozwalamy żeby nie było nazwy
-    egzaminjez = FloatField(default=o)  # nie pozwalamy żeby nie było nazwy
+    egzaminhum = FloatField(default=0)  # nie pozwalamy żeby nie było nazwy
+    egzaminmat = FloatField(default=0)  # nie pozwalamy żeby nie było nazwy
+    egzaminjez = FloatField(default=0)  # nie pozwalamy żeby nie było nazwy
     uczen = ForeignKeyField(Uczen, related_name='wyniki')
 
 
 def main(args):
-    if os.path_exsist(baza_plik):
+    if os.path.exists(baza_plik):
         os.remove(baza_plik)
     baza.connect()  # połączenie z bazą
     baza.create_tables([Klasa, Uczen, Wynik])
+
+    kl2a = Klasa(nazwa='2A', roknaboru=2017, rokmatury=2020)
+    kl1a = Klasa(nazwa='1A', roknaboru=2009, rokmatury=2012)
+
+    kl2a.save()
+    kl1a.save()
+
+    u1 = Uczen(imie='Hubert', nazwisko='Gajewski', plec=False, klasa=kl2a)
+    u2 = Uczen(imie='Marian', nazwisko='Paździoch', plec=False, klasa=kl1a)
+    u3 = Uczen(imie='Helena', nazwisko='Paździochowa', plec=True, klasa=kl1a)
+
+    u1.save()
+    u2.save()
+    u3.save()
+
+    uczniowie = Uczen.select()
+    for uczen in uczniowie:
+        print(uczen.id, uczen.nazwisko, uczen.klasa.nazwa)
+
     return 0
 
 
