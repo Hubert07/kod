@@ -18,24 +18,18 @@ int horner(int stopien, float tbwspol[], float x) {
     int a;
     int wynik = 0;
     for (int i = 0; i <= stopien; i++) {
-        if (i == stopien) {
-            a = x;
-            }
-        else {
         potega = pow(x, stopien - i);
         a = potega * tbwspol[i];
-            }
         wynik = a + wynik;
     }
     return wynik;
 }
 
 void drukujw (int stopien, float tbwspol[]) {
-    int i = 0;
     for (int i = 0; i < stopien; i++) {
     cout << tbwspol[i] <<"x^" << stopien - i << " + " ;
     }
-    cout << tbwspol[i];
+    cout << tbwspol[stopien];
 }
 
 int main(int argc, char **argv) {
@@ -48,7 +42,7 @@ int main(int argc, char **argv) {
     cin >> stopien;
     tbwspol = new float [stopien + 1];
 
-    for (int i = 0; i < stopien; i++) {
+    for (int i = 0; i <= stopien; i++) {
         cout << "Podaj współczynnik przy potędze: "
              << stopien - i << ": ";
         cin >> tbwspol[i];
