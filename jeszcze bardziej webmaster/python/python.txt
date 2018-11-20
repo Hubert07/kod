@@ -61,3 +61,14 @@ kolejka.append(x) / kolejka.popleft()
 
 tupla = lista, której nie da się dodać
 
+
+odwrotna notacja polska:
+ (2 + 3) * 5 ==> 2 3 + 5 *
+ robimy to w stosie
+
+
+
+
+
+!!!!!!!WAŻNE!!!!!!!!1
+eval(coś + coś + coś) trakuje te cosie jako instrukcje 
