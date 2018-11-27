@@ -28,7 +28,7 @@ class ONPKlasa(Stos):
             return True
 
     def oblicz_onp(self):
-        onp = self.onp_str.split(" ")
+        onp = self.onp_str.strip().split(" ")
 
         for el in onp:
             if el.isdigit():
