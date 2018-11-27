@@ -6,12 +6,12 @@
 import turtle
 
 
-def rysujKwadrat(zolw, bok, ile, kat):
+def rysujKwadrat(zolw, bok, ile, kat, granica):
     # ~for i in range(4):
     zolw.forward(bok)
     zolw.right(kat)
-    if ile < bok:
-        rysujKwadrat(zolw, bok + 1, ile + 1, kat)
+    if ile <= granica:
+        rysujKwadrat(zolw, bok + 1, ile + 1, kat, granica)
 
 
 
@@ -23,7 +23,7 @@ def main(args):
     zolw.color('green')
     zolw.speed(0)
 
-    rysujKwadrat(zolw, 60, 4, 91)
+    rysujKwadrat(zolw, 60, 4, 91, 300)
 
     turtle.done()
     return 0
