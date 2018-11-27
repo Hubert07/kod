@@ -6,13 +6,12 @@
 import turtle
 
 
-def rysujKwadrat(zolw, bok, ile, kat):
+def rysujKwadrat(zolw, bok, ile, kat, granica):
     # ~for i in range(4):
     zolw.forward(bok)
     zolw.right(kat)
-    if ile < bok:
-        rysujKwadrat(zolw, bok + 1, ile + 1, kat)
-
+    if ile < granica:
+        rysujKwadrat(zolw, bok + 2, ile + 1, kat, granica)
 
 
 def main(args):
@@ -23,7 +22,8 @@ def main(args):
     zolw.color('green')
     zolw.speed(0)
 
-    rysujKwadrat(zolw, 60, 4, 91)
+    granica = int(input("Podaj iloś wykonanych obrotów: "))
+    rysujKwadrat(zolw, 60, 0, 91, granica)
 
     turtle.done()
     return 0
