@@ -8,8 +8,11 @@ void lpierwsza(int n) {
         cout << "Liczba złożona";
     }
     while (n % i != 0) {
-                 i++;
-    3}
+        i++;
+        if (i * i > n) {
+            cout << "Liczba pierwsza";
+    }
+    }
     if (i * i > n) {
         cout << "Liczba pierwsza";
     }

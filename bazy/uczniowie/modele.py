@@ -1,9 +1,7 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-#  uczniowie_orm.py
-#
-import os
+# modele.py
+
 from peewee import *
 baza_plik = 'uczniowie.db'
 baza = SqliteDatabase(baza_plik)  # instancja bazy
@@ -45,16 +43,3 @@ class Ocena(BazaModel):
     uczen = ForeignKeyField(Uczen, related_name='oceny')
     przedmiot = ForeignKeyField(Przedmiot, related_name='oceny')
     ocena = DecimalField(null=False)
-
-
-def main(args):
-    if os.path.exists(baza_plik):
-        os.remove(baza_plik)
-    baza.connect()  # połączenie z bazą
-    baza.create_tables([Klasa, Uczen, Przedmiot, Ocena])
-    return 0
-
-
-if __name__ == '__main__':
-    import sys
-    sys.exit(main(sys.argv))
