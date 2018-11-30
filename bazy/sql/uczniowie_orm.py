@@ -5,21 +5,8 @@
 #
 import os
 from modele import *
-from baza import dane_z_pliku
-
 
 def dodaj_dane(dane):
-
-    for model, plik in dane.items():
-        pola = [pole for pole in model._meta.fields]
-        pola.pop(0)  # usunięcie klucza głównego
-        print(pola)
-
-        wpisy = dane_z_pliku(plik + '.csv')
-        model.insert_many(wpisy, fields=pola).execute()
-        print(wpisy)
-
-# model.insert_many(wpisy, fields=('nazwa', 'rok_naboru' etc...))
 
 
 def main(args):
@@ -36,8 +23,6 @@ def main(args):
         Przedmiot: 'przedmioty',
         Ocena: 'oceny',
     }
-
-    dodaj_dane(dane)
 
     baza.close()
     return 0
