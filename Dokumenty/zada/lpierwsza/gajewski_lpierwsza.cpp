@@ -9,7 +9,7 @@ void lpierwsza(int n) {
     }
     while (n % i != 0) {
                  i++;
-    3}
+    }
     if (i * i > n) {
         cout << "Liczba pierwsza";
     }
