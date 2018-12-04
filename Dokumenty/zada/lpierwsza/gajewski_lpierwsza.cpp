@@ -8,7 +8,14 @@ void lpierwsza(int n) {
         cout << "Liczba złożona";
     }
     while (n % i != 0) {
+<<<<<<< HEAD
                  i++;
+=======
+        i++;
+        if (i * i > n) {
+            cout << "Liczba pierwsza";
+    }
+>>>>>>> 4c3e94ff5077d9395cd4bc78eeaf6a8432503328
     }
     if (i * i > n) {
         cout << "Liczba pierwsza";

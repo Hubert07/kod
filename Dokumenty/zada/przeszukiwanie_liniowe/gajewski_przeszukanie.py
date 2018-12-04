@@ -23,6 +23,7 @@ def main(args):
     traf = int(input("Wytypuj liczbę od 0 do 50: "))
 
     for j in range(0, x, 1):
+        brawo = 0
         if liczby[j] == traf:
             brawo = 1
         else:

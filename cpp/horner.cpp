@@ -25,6 +25,11 @@ int horner(int stopien, float tbwspol[], float x) {
     return wynik;
 }
 
+float horner_rek(int stopien, float tbwspol[], float x) {
+    if (stopien == 0) return tbwspol[0];
+    return horner_rek(stopien-1, tbwspol, x) * x + tbwspol[stopien];
+}
+
 void drukujw (int stopien, float tbwspol[]) {
     for (int i = 0; i < stopien; i++) {
     cout << tbwspol[i] <<"x^" << stopien - i << " + " ;
@@ -54,7 +59,8 @@ int main(int argc, char **argv) {
     drukujw(stopien, tbwspol);
     cout << "\ndla x=" << x << " Wynosi: ";
     cout << endl;
-    cout << horner(stopien, tbwspol, x);
+    cout << horner(stopien, tbwspol, x) << endl;
+    cout << horner_rek(stopien, tbwspol, x);
     return 0;
 }
 
