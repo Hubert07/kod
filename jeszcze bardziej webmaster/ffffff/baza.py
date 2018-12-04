@@ -29,7 +29,6 @@ def ladujDane(sesja):
             sesja.add(Zadanie(tresc=tresc, osoba=o))
     sesja.commit()
 
-
 def pobierzDane(sesja, osoba):
     zadania = []
     wpisy = sesja.query(Zadanie).filter(Zadanie.osoba == osoba)
@@ -42,7 +41,6 @@ def pobierzDane(sesja, osoba):
             False
         ])
     return zadania
-
 
 def dodajZadanie(sesja, osoba, tresc):
     """ Dodawanie nowego zadania """
@@ -70,20 +68,6 @@ def loguj(sesja, login, haslo):
             osoba = None
 
     return osoba
-
-
-def zapiszDane(sesja, zadania):
-    """ Zapisywanie zmian """
-    for i, z in enumerate(zadania):
-        # utworzenie instancji zadania
-        zadanie = sesja.query(Zadanie).filter(Zadanie.id == z[0]).one()
-        if z[4]:  # jeżeli zaznaczono zadanie do usunięcia
-            sesja.delete(zadanie)  # usunięcie zadania z bazy
-            del zadania[i]  # usunięcie zadania z danych modelu
-        else:
-            zadanie.tresc = z[1]
-            zadanie.wykonane = z[3]
-            sesja.commit()
 
 
 def main(args):

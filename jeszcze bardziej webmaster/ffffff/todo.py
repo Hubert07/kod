@@ -1,6 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# todo.py
 
 from PyQt5.QtWidgets import QApplication, QWidget
 from gui import Ui_Widget, LoginDialog
@@ -13,18 +12,11 @@ class Zadania(QWidget, Ui_Widget):
 
     def __init__(self, parent=None):
         super(Zadania, self).__init__(parent)
-        self.setupUI(self)
-
+        self.setupUi(self)
+        
         self.logujBtn.clicked.connect(self.loguj)
-        self.koniecBtn.clicked.connect(self.zamknij)
-        self.fullscreenBtn.clicked.connect(self.pelnyekran)
-        self.minimalizujBtn.clicked.connect(self.normal)
+        self.koniecBtn.clicked.connect(self.koniec)
         self.dodajBtn.clicked.connect(self.dodaj)
-        self.zapiszBtn.clicked.connect(self.zapisz)
-
-    def zapisz(self):
-        baza.zapiszDane(baza.sesja, model.tabela)
-        model.layoutChanged.emit()
 
     def dodaj(self):
         """ Dodawanie nowego zadania """
@@ -44,38 +36,33 @@ class Zadania(QWidget, Ui_Widget):
         if len(model.tabela) == 1:  # jeżeli to pierwsze zadanie
             self.odswiezWidok()     # trzeba przekazać model do widoku
 
-    def pelnyekran(self):
-        self.showFullScreen()
-
-    def normal(self):
-        self.showNormal()
-
-    def zamknij(self):
+    def koniec(self):
         self.close()
 
     def loguj(self):
         login, haslo, ok = LoginDialog.getLoginHaslo(self)
         if not ok:
             return
-
+            
         if not login or not haslo:
             QMessageBox.warning(
-                                self, 'Błąd', 'Pusty login lub hasło!', QInputDialog.Ok)
+                                self, 'Błąd', 'Pusty login lub hasło!',
+                                QMessageBox.Ok)
             return
         self.osoba = baza.loguj(baza.sesja, login, haslo)
         if self.osoba is None:
             QMessageBox.critical(self, 'Błąd', 'Błędne dane!', QMessageBox.Ok)
             return
 
+        # ~QMessageBox.information(
+                    # ~self, 'Dane logowania',
+                    # ~'Podano: ' + login + ' ' + haslo, QMessageBox.Ok)
+
         zadania = baza.pobierzDane(baza.sesja, self.osoba)
         model.aktualizuj(zadania)
         model.layoutChanged.emit()
         self.odswiezWidok()
         self.dodajBtn.setEnabled(True)
-
-        """ QMessageBox.information(
-                                self, 'Dane logowania',
-                                'Podano: ' + login + ' ' + haslo, QMessageBox.Ok) """
 
     def odswiezWidok(self):
         self.widok.setModel(model)
@@ -86,6 +73,7 @@ class Zadania(QWidget, Ui_Widget):
 
 if __name__ == '__main__':
     import sys
+
     app = QApplication(sys.argv)
     model = TbModel()
     okno = Zadania()
