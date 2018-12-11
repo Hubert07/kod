@@ -13,7 +13,9 @@ plansza = pygame.display.set_mode((O_SZER, O_WYS), 0, 32)
 # tytuł okna gry
 pygame.display.set_caption('Pong')
 
-PAL_SZER, PAL_WYS, MAKS_V = 100, 20, 10
+PAL_SZER, PAL_WYS, MAKS_V = 20, 100, 10
+
+PAL_SZER2, PAL_WYS2, MAKS_V = 100, 20, 10
 
 # paletka gracza 1
 # utworzenie powierzchni paletki, wypełnienie jej kolorem,
@@ -21,8 +23,14 @@ pal1 = pygame.Surface([PAL_SZER, PAL_WYS])
 pal1.fill((0, 0, 255))
 # ustawienie prostokąta zawierającego paletkę w początkowej pozycji
 pal1_prost = pal1.get_rect()
-pal1_prost.x = 350
+pal1_prost.x = 50
 pal1_prost.y = 60
+
+pal2 = pygame.Surface([PAL_SZER2, PAL_WYS2])
+pal2.fill((255, 0, 255))
+pal2_prost = pal2.get_rect()
+pal2_prost.x = 350
+pal2_prost.y = 360
 
 # pętla główna programu
 while True:
@@ -35,8 +43,8 @@ while True:
 
     # kolor okna gry, składowe RGB podane w tupli
     plansza.fill((200, 255, 255))
-
     plansza.blit(pal1, pal1_prost)
+    plansza.blit(pal2, pal2_prost)
 
     # rysowanie okna
     pygame.display.update()
