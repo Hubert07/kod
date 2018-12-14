@@ -3,12 +3,25 @@
 #
 #  quiz.py
 #
-#  Copyright 2018  <>
-from flask import Flask
-from flask import render_template
-app = Flask(__name__)
 
+from flask import Flask, g
+from flask import render_template, request
+from modele import *
+
+app = Flask(__name__)
 print(__name__)
+
+
+@app.before_request
+def before_request():
+    g.db = baza
+    g.db.connect()
+
+
+@app.after_request
+def after_request(response):
+    g.db.close()
+    return response
 
 
 @app.route("/")
@@ -16,9 +29,10 @@ def hello():
     return "<h1>Witaj Świecie!</h1><h2>Aplikacja Quiz<h2/>"
 
 
-@app.route("/strona")
-def strona():
-    return render_template('html/strona.html')
+@app.route("/quiz")
+def quiz():
+    pytania = Pytanie.select()
+    return render_template('quiz.html', query=pytania)
 
 
 @app.route("/klasa")
