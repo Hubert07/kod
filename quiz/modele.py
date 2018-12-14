@@ -3,7 +3,7 @@
 # modele.py
 
 from peewee import *
-baza_plik = 'modele.db'
+baza_plik = 'quiz.db'
 baza = SqliteDatabase(baza_plik)  # instancja bazy
 
 # MODELE DANYCH (jak chcę coś z peewee)
@@ -25,7 +25,6 @@ class Pytanie(BazaModel):
 
 
 class Odpowiedz(BazaModel):
-    id_p = ForeignKeyField(Pytanie, related_name='odpowiedzi')
     odpowiedzi = CharField(null=False)
+    id_p = ForeignKeyField(Pytanie, related_name='odpowiedzi')
     odpok = BooleanField(default=False)
-    plec_naucz = IntegerField()
