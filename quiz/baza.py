@@ -33,8 +33,9 @@ def dodaj_dane(dane):
         print(pola)
 
         wpisy = dane_z_pliku(plik + '.csv')
-        model.insert_many(wpisy, fields=pola).execute()
         print(wpisy)
+        model.insert_many(wpisy, fields=pola).execute()
+
 
 # model.insert_many(wpisy, fields=('nazwa', 'rok_naboru' etc...))
 
