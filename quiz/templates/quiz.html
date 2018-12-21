@@ -9,7 +9,7 @@
 
 <body>
 
-  <form method-"post">
+  <form method="post">
 
   <h1>Quiz - odpowiedz na pytania</h1>
   <h2>Pytania</h2>
@@ -21,13 +21,13 @@
       {% for o in p.odpowiedzi %}
 
       <input type="radio" name="{{ p.id }}" value="{{ o.id }}">
-      {{ o.odpowiedz }}
+      {{ o.odpowiedzi }}
       <br>
       {% endfor %}
 
   </p>
   {% endfor %}
-  <input type="submit" name="Zapisz">
+  <input type="submit" value="Zapisz">
 
 </form>
 

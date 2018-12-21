@@ -10,6 +10,7 @@
     <title>Quiz - pytania bez ściemy</title>
     <style type="text/css">
       #menu li: { display: inline }
+      .info { color: green }
     </style>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="generator" content="Geany 1.32" />
@@ -17,13 +18,24 @@
 
 <body>
     <ul>
-      <l><a href="{{ url_for('index') }}">Strona główna</a></li>
-      <l><a href="{{ url_for('lista') }}">Lista pytań</a></li>
-      <l><a href="{{ url_for('quiz') }}">Quiz</a></li>
-      <l><a href="#">Dodaj pytanie</a></li>
+      <li><a href="{{ url_for('index') }}">Strona główna</a></li>
+      <li><a href="{{ url_for('lista') }}">Lista pytań</a></li>
+      <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+      <li><a href="#">Dodaj pytanie</a></li>
     </ul>
 
     <h1>Quiz dla odważnych</h1>
+
+    <div id="komunikaty">
+      {% with komunikaty = get_flashed_messages(with_categories=true) %}
+      {% if komunikaty %}
+        {% for kategoria, komunikat in komunikaty %}
+        <p class="{{ kategoria }}">{{ komunikat }}</p>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+
 </body>
 
 </html>
