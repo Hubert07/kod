@@ -25,14 +25,20 @@ def after_request(response):
 
 
 @app.route("/")
-def hello():
+def index():
     return "<h1>Witaj Świecie!</h1><h2>Aplikacja Quiz<h2/>"
 
 
 @app.route("/quiz")
 def quiz():
-    pytania = Pytanie.select()
+    pytania = Pytanie.select().join(Odpowiedz).distinct()
     return render_template('quiz.html', query=pytania)
+
+
+@app.route("/lista")
+def lista():
+    pytania = Pytanie.select()
+    return render_template('lista.html', query=pytania)
 
 
 @app.route("/klasa")
