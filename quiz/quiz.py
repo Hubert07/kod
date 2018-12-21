@@ -26,7 +26,7 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return "<h1>Witaj Świecie!</h1><h2>Aplikacja Quiz<h2/>"
+    return render_template('index.html')
 
 
 @app.route("/quiz")
