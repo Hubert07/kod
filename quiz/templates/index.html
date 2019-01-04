@@ -1,41 +1,18 @@
-<!--
-   index.html
--->
+{% extends "szablon.html" %}
+{% block tytul %}Quiz - pytania bez ściemy{% endblock %}
+{% block h1 %}Quiz dla odważnych{% endblock %}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 
-<head>
-    <title>Quiz - pytania bez ściemy</title>
-    <style type="text/css">
-      #menu li: { display: inline }
-      .info { color: green }
-    </style>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta name="generator" content="Geany 1.32" />
 </head>
 
-<body>
-    <ul>
-      <li><a href="{{ url_for('index') }}">Strona główna</a></li>
-      <li><a href="{{ url_for('lista') }}">Lista pytań</a></li>
-      <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
-      <li><a href="#">Dodaj pytanie</a></li>
-    </ul>
-
-    <h1>Quiz dla odważnych</h1>
-
+{% block tresc %}
     <div id="komunikaty">
       {% with komunikaty = get_flashed_messages(with_categories=true) %}
       {% if komunikaty %}
         {% for kategoria, komunikat in komunikaty %}
-        <p class="{{ kategoria }}">{{ komunikat }}</p>
+        <center><p class="{{ kategoria }}">{{ komunikat }}</p></center>
         {% endfor %}
       {% endif %}
       {% endwith %}
     </div>
-
-</body>
-
-</html>
+{% endblock %}
