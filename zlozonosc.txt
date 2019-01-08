@@ -1,0 +1,9 @@
+                    ***Złożoność obliczeniowa algorytmów***
+             ile operacji dominujących musi wykonać algorytm
+           Złożonosć liniową On
+                     kwadratową On^2
+                   Sk = ( a(1) + a(k) ) \ 2 x k
+                   a(k) = n - 1
+                   k = n - 1 
+                   
+            Bardziej wydajne pamięciowo są iteracyjne

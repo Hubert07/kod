@@ -45,17 +45,20 @@ void wypelnij_sort(int tab[], int roz) {
 }
 
 void sort_insert(int tab[], int roz) {
-    cout << "\nSortowanie przez wstawianie\n";
+    cout << endl << "\nSortowanie przez wstawianie\n";
     int i, j, tmp;
+    int licznik = 0;
     for(i = 1; i < roz; i++) { // pętla wybiera kolejne elementy zaczynając do 2
     tmp = tab[i];
     j = i - 1;
     while (j >= 0 && tab[j] > tmp) {
         tab[j+1] = tab[j];
         j--;
+        licznik ++;
         }
     tab[j+1] = tmp;
     }
+    cout << "liczba powtórzeń: " << licznik << endl;
 }
 
 int main(int argc, char **argv)
