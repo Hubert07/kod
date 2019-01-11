@@ -3,12 +3,13 @@
 {% block h1 %}Quiz{% endblock %}
 
 {% block tresc %}
-
+  <center>
   <h2>Pytania</h2>
   {% for p in query %}
   <p>
       {{ p.id }} {{ p.pytanie }}
   </p>
   {% endfor %}
+  </center>
 {% endblock %}
 

@@ -1,0 +1,27 @@
+{% extends "szablon.html" %}
+{% block tytul %}Moja strona{% endblock %}
+{% block h1 %}Quiz - dodaj pytanie{% endblock %}
+
+{% block tresc %}
+  <center>
+  <form method="POST">
+
+    {{ form.csrf_token }}
+
+
+    {{ form.id }}
+    {{ form.pytanie }}
+    <div class="form-group">
+      {{ form.odpowiedz }}
+    </div>
+
+    <div class="form-group">
+      {{ form.odpok }}
+    </div>
+
+
+    <input type="submit" value="Zapisz">
+
+  </form>
+  </center>
+{% endblock %}
