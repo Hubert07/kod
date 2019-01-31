@@ -30,10 +30,10 @@ class PongGra(object):
     def __init__(self, szer, wys):
         pygame.init()
         self.plansza = Plansza(szer, wys)
-        self.pal1 = Paletka(szer=100, wys=5, x=350, y=360)
+        self.pal1 = Paletka(szer=100, wys=5, x=350, y=540)
         self.pal2 = Paletka(szer=100, wys=5, x=350, y=60)
         self.pilka = Pilka(szer=30, wys=30, x=400, y=200)
-        self.gracz2 = Gracz2(self.pal2, self.pilka, 5)
+        self.gracz2 = Gracz2(self.pal2, self.pilka, 8)
         self.fpsClock = pygame.time.Clock()
 
     def uruchom(self):
@@ -92,7 +92,7 @@ class Paletka(ObiektGraf):
 
 
 class Pilka(ObiektGraf):
-    def __init__(self, szer, wys, x, y, kolor=(255, 255, 255), px_v=10, py_v=8):
+    def __init__(self, szer, wys, x, y, kolor=(255, 255, 255), px_v=6, py_v=6):
         super().__init__(szer, wys, x, y, kolor)
         self.px_v = px_v
         self.py_v = py_v
@@ -113,7 +113,7 @@ class Pilka(ObiektGraf):
 
 
 class Gracz2():
-    def __init__(self, pal, pilka, pal_v=10):
+    def __init__(self, pal, pilka, pal_v=8):
         self.pal = pal
         self.pilka = pilka
         self.pal_v = pal_v
@@ -126,5 +126,5 @@ class Gracz2():
 
 
 if __name__ == "__main__":
-    gra = PongGra(800, 400)
+    gra = PongGra(800, 600)
     gra.uruchom()
