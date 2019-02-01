@@ -6,13 +6,5 @@
 </head>
 
 {% block tresc %}
-    <div id="komunikaty">
-      {% with komunikaty = get_flashed_messages(with_categories=true) %}
-      {% if komunikaty %}
-        {% for kategoria, komunikat in komunikaty %}
-        <center><p class="{{ kategoria }}">{{ komunikat }}</p></center>
-        {% endfor %}
-      {% endif %}
-      {% endwith %}
-    </div>
+  <center><h2>Dzień dobry!</h2></center>
 {% endblock %}

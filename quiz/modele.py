@@ -16,7 +16,7 @@ class BazaModel(Model):
 
 
 class Kategoria(BazaModel):
-    kategoria = CharField(max_length=30)  # nie pozwalamy żeby nie było nazwy
+    kategoria = CharField(null=False)  # nie pozwalamy żeby nie było nazwy
 
 
 class Pytanie(BazaModel):
@@ -28,3 +28,8 @@ class Odpowiedz(BazaModel):
     odpowiedzi = CharField(null=False)
     id_p = ForeignKeyField(Pytanie, related_name='odpowiedzi')
     odpok = BooleanField(default=False)
+
+
+if __name__ == '__main__':
+    import sys
+    sys.exit(main(sys.argv))
