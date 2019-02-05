@@ -31,3 +31,20 @@ jak zamineiamy
 8bitów ^ zapsiujemy od dołu, czyli od ost dzielenia
 
 binarna na zwykłą to w exelu
+
+
+wlaściciel - 6 (rw)
+frupa - 4 (r)
+inni - 4 (r)
+zpais - 2
+czytanie - 4
+
+liczby w systemie 8
+
+7 (rwx) - wszystkie możliwe
+
+
+1001 0011 = 93(16)
+system 16 0-9, A, B, C, D, E, F (MAX 15)
+
+1110 1000 = E8
