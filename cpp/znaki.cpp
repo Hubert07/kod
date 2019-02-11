@@ -73,7 +73,8 @@ int main(int argc, char **argv)
     cin.getline(znaki, 50); // deklaracja tablicy znakowej
     cout << "Cześć " << znaki << endl;
 	// licz_znaki(znaki);
-    cout << ascii(znaki) << endl;
+    ascii(znaki);
+    cout << endl;
     zamiana_liter(znaki);
 	return 0;
 }
