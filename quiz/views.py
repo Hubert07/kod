@@ -1,17 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  quiz.py
+#  views.py
 #
-
 from flask import Flask
-from flask import render_template, request, abort
-from flask import redirect, url_for, flash
+from flask import render_template, request
+from flask import redirect, url_for, flash, abort
 from modele import *
 from forms import *
 
 app = Flask(__name__)
-print(__name__)
 
 
 @app.route("/")
@@ -33,8 +31,8 @@ def quiz():
         for pid, oid in request.form.items():
             if Odpowiedz().get(Odpowiedz.id == int(oid)).odpok:
                 wynik += 1
-        print("Poprawne", wynik)
-        flash("Wynik: {}".format(wynik), 'info')
+        print("Poprawne:", wynik)
+        flash('Poprawne odpowiedzi: {}'.format(wynik), 'info')
         return redirect(url_for('index'))
 
     pytania = Pytanie.select().join(Odpowiedz).distinct().order_by(Pytanie.id)
@@ -42,7 +40,7 @@ def quiz():
 
 
 def flash_errors(form):
-    for field, errors in form.errors.itmes():
+    for field, errors in form.errors.items():
         for error in errors:
             if type(error) is list:
                 error = error[0]
@@ -89,3 +87,29 @@ def page_not_found(e):
 @app.route("/edytuj/<int:pid>", methods=['GET', 'POST'])
 def edytuj(pid):
     p = get_or_404(pid)
+    form = PytanieForm(obj=p)
+    form.kategoria.choices = [(k.id, k.kategoria) for k in Kategoria.select()]
+    form.kategoria.data = p.kategoria.id
+
+    if form.validate_on_submit():
+        print(form.data)
+        p.pytanie = form.pytanie.data
+        p.kategoria = form.kategoria.data
+        p.save()
+        for o in form.odpowiedzi.data:
+            odp = Odpowiedz.get_by_id(o['id'])
+            odp.odpowiedz = o['odpowiedz']
+            odp.odpok = int(o['odpok'])
+            odp.save()
+        flash("Zaktualizowano pytanie: {}".format(form.pytanie.data))
+        return redirect(url_for('lista'))
+    elif request.method == 'POST':
+        flash_errors(form)
+
+    odpowiedzi = []
+    for o in Odpowiedz.select().where(Odpowiedz.pytanie == p.id).dicts():
+        odpowiedzi.append(o)
+
+    print(odpowiedzi)
+
+    return render_template("edytuj.html", form=form)

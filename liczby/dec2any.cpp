@@ -23,6 +23,7 @@ int dectoany(int liczba, int podstawa, int tab[]){
 }
 
 
+// naprawić tą pętle z podawaniem znakow itp
 void anytodec (int tab[]) {
     int podstawa = 0;
     do {
@@ -38,7 +39,7 @@ void anytodec (int tab[]) {
 
                 cout << "Podaj cyfrę[0-" << podstawa - 1 << "]: ";
                 cin >> tab[i];
-                
+
         // zamiana liter w odpowiednie liczby
                 if ((int)tab[i] > 60) {
                     tab[i] = (int)tab[i] - 55;

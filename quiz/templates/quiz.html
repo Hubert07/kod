@@ -4,7 +4,7 @@
 
 {% block tresc %}
   <center>
-  <form method="post">
+  <form method="POST">
 
     <h2>Pytania</h2>
 
@@ -15,7 +15,7 @@
         {% for o in p.odpowiedzi %}
 
         <input type="radio" name="{{ p.id }}" value="{{ o.id }}">
-        {{ o.odpowiedzi }}
+        {{ o.odpowiedz }}
         <br>
         {% endfor %}
 
