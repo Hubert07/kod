@@ -1,0 +1,19 @@
+The rain in Spain falls mainly on the plain.
+The rain_<3,3>Sp<9,4>falls m<11, 3>ly on t<34, 3> pl<15, 3>  <=34 bajty
+
+<x, y>
+34, 4
+Potrzeba 6 bitów, 2bity = 8 bitów
+
+32-16-8-4-2-1
+1-0-0-0-1-0
+
+wielkość słownika
+
+Moją pasją są kompresję i ich komputerowe wersje.
+Moją pas<6, 3>są kompresję i<2, 2>ch<17, 5>uterowe <3, 2>r<>ę
+
+
+<18, 2>
+
+1-0-0-1-0  1-0
