@@ -14,10 +14,13 @@ void szyfruj(int klucz, char tab[]) {
     int i = 0;
     while (tab[i] != '\0') {
         if (tab[i] == ' ') {
+            cout << tab[i];
             i++;
-            continue;
             }
         kod = (int)tab[i] + klucz;
+        if (kod > 122) {
+            kod = kod - 26;
+            }
         cout << (char)kod;
         i++;
         }
