@@ -17,14 +17,26 @@ void szyfruj(int klucz, char tab[]) {
             cout << tab[i];
             i++;
             }
-        kod = (int)tab[i] + klucz;
-        if (kod > 122) {
-            kod = kod - 26;
+
+        if ((int)tab[i] <= 90) {
+                kod = (int)tab[i] + klucz;
+            if (kod > 90) {
+                kod = kod - 26;
             }
-        cout << (char)kod;
-        i++;
+            cout << (char)kod;
+            i++;
+            }
+
+        if ((int)tab[i] > 96) {
+            kod = (int)tab[i] + klucz;
+            if (kod > 122) {
+                kod = kod - 26;
+            }
+            cout << (char)kod;
+            i++;
         }
     }
+}
 
 
 int main(int argc, char **argv)
