@@ -1,0 +1,11 @@
+PHP (interpreter) nie dziala bez serwera i działa po stronie serwera a nie klienta i generuje strony w czasie rzeczywistym. Dodaje się bazy danych, często mySQL chcoć voraz częściej mariaDB
+
+serwer LAMP (Linux Apache MySQL PHP)
+       albo
+       WAMP (Windows APache MuSQL PHP)
+       
+LINUX:
+apt-get install apache2 libapache2-mod-php7.2 php pgp-gd php-sqlite3
+
+localhost 127.0.0.1 nazwa komputera
+localhost/~<nazwaużytkownika>/itd
