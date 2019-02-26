@@ -1,0 +1,4 @@
+jeśeli chcemy się odnieśc czy coś jest w zbiorze to dajemy
+naszecoś in <zbior>
+
+in przydatne czy coś jest w zbiorze / jest kluczem słownika
