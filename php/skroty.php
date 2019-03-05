@@ -1,12 +1,10 @@
 <?php
-
     // funkcje skrótu
     $tekst = 'cokolwiek';
-    echo hash('shal', $tekst);
-    echo '\n';
-    echo hash('shal256', $tekst);
-    echo '\n';
-    $haslo = 'ashjdbhjafvghasdvfdshjb';
-    echo scha;
-
+    echo hash('sha1', $tekst);
+    echo "\n";
+    echo hash('sha256', $tekst);
+    echo "\n";
+    $haslo = 'bardzotajnehaslo';
+    echo hash('sha256', $haslo);
 ?>
