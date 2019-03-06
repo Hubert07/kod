@@ -1,0 +1,27 @@
+Architektura logiczna komputera
+
+RandomAccesMemory - pamięc operacyjna (jest ulotna), o swobodnym dostępie
+
+Pamięć sekwencyjna
+
+
+Pamięć stała:HardDdiskDrive, SSD, CD, taśmy, dyskietki
+    zapis na stałe
+    ReadOnlyMemory - też wsobodny dostęp, na stały w płycie głównej
+BasicInputOutputSystem
+UEFI to taki nowy bios
+Firmware - poisujedziałanie procesora czy jakoś tak
+
+CentralProcessorUnit to ALU - sekwencyne urządzdenie pobiraja
+                    ale i REJESTRY
+                    64 bitowe - podstawowy rozmair słowa procesora
+
+pamięć CPU i urządzenia wejśćia/wyjścia muszą być połąćzone magistralą(szyną)
+
+MAGISTRALA KOMUNIKACYJNA kontrola, sterująca, podaje adresy, składa się też z szyny danych
+    równoległe i szeregowe
+
+Taktowanie sposób sterowania pracą
+    technologie: DDRx QDRczy_jakoś_tak
+
+INPUT: klawiatura, karta dziurkowana
