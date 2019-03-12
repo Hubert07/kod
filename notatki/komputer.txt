@@ -25,3 +25,13 @@ Taktowanie sposób sterowania pracą
     technologie: DDRx QDRczy_jakoś_tak
 
 INPUT: klawiatura, karta dziurkowana
+
+
+w Windiws mamy albo cmd albo power shell
+ jądro systemu - obsługa urządzeń, sterowniki urządzeń
+
+planista : wielozadaniowość, kolejkowanie żądań
+ obsługa wielu aplikacji:
+ wirtualny model komputera
+
+lista prcoes
