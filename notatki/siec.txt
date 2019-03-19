@@ -1,0 +1,20 @@
+LAN - seić lokalna
+
+
+Ethernet - najpopularniejsze coś do zrobienia sieci
+
+zakończeniem skrętki (8 wyprowadzeń) jest wtyczka rj 45
+
+router łączy sieć lokalną z internetem:
+internet zewnętrzny
+interfejs zewnętrzny
+
+ADRES IP
+adresy lokalne:
+    192.168.3.28
+
+172.16.0.0
+10.0.0.0 - adres sieci lokalnej
+
+127.0.0.1 - localhost
+
