@@ -18,3 +18,26 @@ adresy lokalne:
 
 127.0.0.1 - localhost
 
+Prtotokół - Zestaw reguł/zasad definiujących coś
+            Język porozumiewania się komputerów
+            definiuje metody połączenia
+
+        WARSTWA APLIKACJI:
+            protokoły:
+                http - przesyłanie stron w sieci www
+                GET - rządanie jakiegoś zasobu
+                 i
+                POST -
+
+SESJE + COOKEIS
+
+Warstwa transportowa:
+    TCP: protokół połąćzeniowy 3 flagi syn do innego gościa syn-ack i potem ack, niezawodny
+         przenosi takie jak http/https, SSH, FTP, SMTP, POP, IMAT
+
+    UDP: protokół bezpołączeniowy, bezstanowy, zawodny
+         DNS, streaming, komunikatory audio,
+
+Warstwa internetu
+
+IP, datagramy a pakiety ip
