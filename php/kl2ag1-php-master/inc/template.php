@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pl">
-
   <head>
 
     <meta charset="utf-8">
@@ -8,14 +7,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $tytol; ?></title>
+    <title><?php get_page_title($id); ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/filename='style.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="static/css/scrolling-nav.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
 
   </head>
 
@@ -30,27 +29,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-
             <?php
                 get_menu($id);
             ?>
-
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="bg-info text-white">
+    <header class="bg-primary text-white">
       <div class="container text-center">
-        <h1>Jakiś tekst</h1>
+        <h1>Alikacja PHP</h1>
+        <p class="lead">Moja pierwsza aplikacja w PHP</p>
       </div>
     </header>
 
-<section id="quiz">
+    <section id="quiz">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-           <?php
+            <?php
+                get_koms();
+                $user->get_koms();
                 get_page_content($id);
             ?>
           </div>
@@ -59,7 +59,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-3 bg-dark fixed-bottom">
+    <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
       </div>
@@ -74,7 +74,7 @@
     <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom JavaScript for this theme -->
-    <script src="static/js/scrolling-nav.js"></script>
+    <script src="js/scrolling-nav.js"></script>
 
   </body>
 
