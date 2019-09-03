@@ -1,0 +1,2 @@
+chmod 777 <nazwa katalogu albo coś> -R
+Daje wszystkie uprawnienia danemu katalogowi

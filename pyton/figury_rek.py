@@ -10,16 +10,16 @@ def rysuj(bok, kat, przyrost, warunek):
     turtle.forward(bok)
     turtle.right(kat)
     if kat < warunek:
-        rysuj(bok, kat, przyrost, warunek - 1)
+        rysuj(bok + 1, kat, przyrost, warunek + 1)
 
 
 def main(args):
-    turtle.setup(800, 600)
-    turtle.color('blue', 'yellow')
+    turtle.setup(1000, 900)
+    turtle.color('black', 'yellow')
     turtle.begin_fill()
-    turtle.speed(10)
+    turtle.speed(0)
 
-    rysuj(bok=100, kat=160, przyrost=10, warunek=170)
+    rysuj(bok=150, kat=105, przyrost=10, warunek=180)
 
     turtle.end_fill()
     turtle.done()
